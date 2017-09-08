@@ -22,19 +22,19 @@ QUnit.test("Here's a test that should always pass", function (assert) {
 });
 
 QUnit.test('Testing our max function with four sets of inputs', function (assert) {
-    assert.strictEqual(App.max(), -Infinity, 'No parameters');
-    assert.strictEqual(App.max(3, 1, 2), 3, 'All positive numbers');
-    assert.strictEqual(App.max(-10, 5, 3, 99), 99, 'Positive and negative numbers');
-    assert.strictEqual(App.max(-14, -22, -5), -5, 'All positive numbers');
+    assert.strictEqual(max(), -Infinity, 'No parameters');
+    assert.strictEqual(max(3, 1, 2), 3, 'All positive numbers');
+    assert.strictEqual(max(-10, 5, 3, 99), 99, 'Positive and negative numbers');
+    assert.strictEqual(max(-14, -22, -5), -5, 'All positive numbers');
 });
 
 QUnit.test('Testing our isOdd function four times', function (assert) {
-    assert.ok(App.isOdd(5), '5 is odd');
-    assert.ok(!App.isOdd(2), '5 is not odd');
-    assert.ok(!App.isOdd(0), '0 is not odd');
+    assert.ok(isOdd(5), '5 is odd');
+    assert.ok(!isOdd(2), '5 is not odd');
+    assert.ok(!isOdd(0), '0 is not odd');
     //throws( block                            [, expected ] [, message ] ) 
-    assert.throws(function () { App.isOdd(null); }, /The given argument is not a number/, 'Passing in null correctly raises an Error');
-    assert.throws(function () { App.isOdd([]); }, new Error('The given argument is not a number'), 'Passing in array correctly raises an Error');
+    assert.throws(function () { isOdd(null); }, /The given argument is not a number/, 'Passing in null correctly raises an Error');
+    assert.throws(function () { isOdd([]); }, new Error('The given argument is not a number'), 'Passing in array correctly raises an Error');
 });
 
 
@@ -52,7 +52,7 @@ QUnit.test('Testing our sortObj function three times', function (assert) {
             timestamp: timestamp - 1000
         }];
 
-    App.sortObj(array);
+    sortObj(array);
 
     assert.propEqual(array, [{
         id: 11,
@@ -64,22 +64,22 @@ QUnit.test('Testing our sortObj function three times', function (assert) {
             id: 3,
             timestamp: timestamp + 1000
         }]);
-    assert.notPropEqual(App.sortObj(array), array, 'sortObj() does not return an array');
-    assert.strictEqual(App.sortObj(array), undefined, 'sortObj() returns undefined');
+    assert.notPropEqual(sortObj(array), array, 'sortObj() does not return an array');
+    assert.strictEqual(sortObj(array), undefined, 'sortObj() returns undefined');
 });
 
 QUnit.test("pow(2, 2) should return 4", function (assert) {
-    var result = App.pow(2, 2);
+    var result = pow(2, 2);
     assert.equal(result, 4, "result was " + result);
 });
 
 QUnit.test("pow(2, 3) should return 8", function (assert) {
-    var result = App.pow(2, 3);
+    var result = pow(2, 3);
     assert.equal(result, 8, "result was " + result);
 });
 
 QUnit.test("pow(2, -2) won't return 1/4; see the implementation (negatives always return as 1). This could be improved.", function (assert) {
-    var result = App.pow(2, -2);
+    var result = pow(2, -2);
     assert.notEqual(result, 0.25, "result was " + result);
 });
 
@@ -103,17 +103,17 @@ QUnit.test("pow(2, -2) won't return 1/4; see the implementation (negatives alway
 
 /*
 QUnit.test('Testing the new add function with four sets of inputs', function (assert) {
-    assert.equal(App.add(2, 2), 4, "works with two positive integers");
-    assert.equal(App.add(-3, -3, -2), -8, "works with three negative integers");
-    assert.equal(App.add(2.5, 2.5, 2.5, 2.5), 10, "works with four positive real numbers");
-    assert.equal(App.add(10, -10), 0, "works with a positive and a negative");
+    assert.equal(add(2, 2), 4, "works with two positive integers");
+    assert.equal(add(-3, -3, -2), -8, "works with three negative integers");
+    assert.equal(add(2.5, 2.5, 2.5, 2.5), 10, "works with four positive real numbers");
+    assert.equal(add(10, -10), 0, "works with a positive and a negative");
 });
 
 QUnit.test('Testing the new square function with four sets of inputs', function (assert) {
-    assert.equal(App.square(2), 4, "works with a positive number");
-    assert.equal(App.square(-3), 9, "works with a negative number");
-    assert.equal(App.square(0), 0, "works with zero number");
-    assert.throws(function () { App.square(null); }, new Error('The given argument is not a number'), "correctly raises an error if one tries to square a null");
+    assert.equal(square(2), 4, "works with a positive number");
+    assert.equal(square(-3), 9, "works with a negative number");
+    assert.equal(square(0), 0, "works with zero number");
+    assert.throws(function () { square(null); }, new Error('The given argument is not a number'), "correctly raises an error if one tries to square a null");
 });
 */
 
