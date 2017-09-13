@@ -1,6 +1,6 @@
 # 44-563 M03 Introduction to JavaScript
 
-Introduces a JavaScript app with mathematical functions. 
+Introduces a set of JavaScript mathematical functions. 
 
 # Uses
 
