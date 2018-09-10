@@ -11,13 +11,13 @@
  * or by using the (zero-based) index, e.g., arguments[0].
  */
 
-// Wait, why is there no parameter? You don't need
-// it ... when you invoke max() with a series of
+// Wait, why are there no arguments? You don't need
+// them ... when you invoke max() with a series of
 // numbers, they are automagically embedded into
 // a local arguments object.
 function max() {
-  var max = -Infinity;
-  for (var i = 0; i < arguments.length; i++) {
+  let max = -Infinity;
+  for (let i = 0; i < arguments.length; i++) {
     if (arguments[i] > max) {
       max = arguments[i];
     }
@@ -34,8 +34,8 @@ function isOdd(number) {
 
 function sortObj(array) {
   array.sort(function (a, b) {
-    var date1 = new Date(a.timestamp).getTime();
-    var date2 = new Date(b.timestamp).getTime();
+    const date1 = new Date(a.timestamp).getTime();
+    const date2 = new Date(b.timestamp).getTime();
 
     if (date1 < date2) {
       return -1;
@@ -56,8 +56,8 @@ function sortObj(array) {
  * @return {Number} pow - the result of multiplying base the power number of times
  */
 function pow(base, power) {
-  var output = 1;
-  for (var i = 0; i < power; i++) {
+  let output = 1;
+  for (let i = 0; i < power; i++) {
     output *= base;
   }
   return output;
@@ -70,8 +70,8 @@ function pow(base, power) {
 * @return {Number} sum - result of adding each argument provided
 */
 function sum() {
-  var output = 0;
-  for (var i = 0; i < arguments.length; i++) {
+  let output = 0;
+  for (let i = 0; i < arguments.length; i++) {
     output += arguments[i];
   }
   return output;

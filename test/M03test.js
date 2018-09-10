@@ -39,9 +39,9 @@ QUnit.test('Testing our isOdd function four times', function (assert) {
 
 
 QUnit.test('Testing our sortObj function three times', function (assert) {
-    var timestamp = Date.now();
+    let timestamp = Date.now();
 
-    var array = [{
+    let array = [{
         id: 1,
         timestamp: timestamp
     }, {
@@ -69,17 +69,17 @@ QUnit.test('Testing our sortObj function three times', function (assert) {
 });
 
 QUnit.test("pow(2, 2) should return 4", function (assert) {
-    var result = pow(2, 2);
+    const result = pow(2, 2);
     assert.equal(result, 4, "result was " + result);
 });
 
 QUnit.test("pow(2, 3) should return 8", function (assert) {
-    var result = pow(2, 3);
+    const result = pow(2, 3);
     assert.equal(result, 8, "result was " + result);
 });
 
 QUnit.test("pow(2, -2) won't return 1/4; see the implementation (negatives always return as 1). This could be improved.", function (assert) {
-    var result = pow(2, -2);
+    const result = pow(2, -2);
     assert.notEqual(result, 0.25, "result was " + result);
 });
 
