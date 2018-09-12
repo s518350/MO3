@@ -77,4 +77,11 @@ function sum() {
   return output;
 }
 
-
+function square(number){
+  if (isNaN(number) || number == null){
+    throw new Error("The given argument is not a number");
+  }
+  else{
+    return number * number;
+  }
+}
